@@ -22,4 +22,4 @@
 
 ## 滤波过程
 为了进行图像平滑操作，通常在图像上加一个滤波器(filter)，最常见的类型是线性的，输出像素值(g(i, j))最终由原像素值和加权值决定。其公式如下： 
- ! [这里随便填写 ] (  opencv/pictures/20161225144553744.jpg  )；
+ ![showPic] (https://github.com/liwenjian12/opencv/blob/master/pictures/20161225144553744.jpg)；
