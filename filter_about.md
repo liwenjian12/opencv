@@ -74,3 +74,34 @@ C++: void boxFilter(InputArray src, OutputArray dst, int ddepth, Size ksize, Poi
 ### 双边滤波
 双边滤波是结合图像的空间邻近度和像素值相似度的一种折中处理，同时考虑空间域信息和灰度相似性，达到保留边缘且去除噪声的目的。 
 ![](https://github.com/liwenjian12/opencv/blob/master/pictures/20151208134222591.jpg)
+
+## Opencv中的相关函数
+```
+#include<opencv2\opencv.hpp>
+#include<iostream>
+#include<math.h>
+#include<algorithm>
+using namespace std;
+using namespace cv;
+
+int main()
+{
+  mat src;
+  src = imread("1.jpg",1);
+  if (src.empty())
+  {
+    printf("cannot load !! \n");
+    return -1;
+  }
+  namedWindow("原图");
+  imshow("",src);
+  Mat dst,dst1;
+  blur(src,dst,Size(3,3), Point(-1, -1));  # 均值滤波
+  
+  GaussianBlur(src, dst, Size(5,5),5,5);   # 高斯滤波
+  
+  medianBlur(src, dst, 5);                 # 中值滤波  
+  
+  bilateralFilter(src, dst, 5, 100, 3);    # 双边滤波
+}
+```
